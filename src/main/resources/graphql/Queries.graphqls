@@ -1,0 +1,23 @@
+type Query {
+    videoList: [Video]
+    creatorById(id: Float): Creator
+}
+
+type Mutation {
+    saveVideo(video: VideoRequest): Video
+    saveCreator(creator: CreatorRequest): Creator
+}
+
+input VideoRequest {
+    name: String
+    url: String
+    description: String
+    datePublication: String
+    creator: CreatorRequest
+}
+
+input CreatorRequest {
+    name: String
+    email: String
+}
+
